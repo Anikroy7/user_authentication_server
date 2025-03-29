@@ -1,15 +1,38 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
-const app: Application = express();
+import router from "./app/routes";
+import globalErrorHandler from "./app/middlewares/globalErrorhandler";
+import notFound from "./app/middlewares/notFound";
 
+const passport = require('passport');
+require('./app/config/passport')(passport);
+
+const app: Application = express();
 
 app.use(express.json());
 
-app.use(cors());
+app.use(
+    cors({
+        credentials: true,
+    }),
+)
 
-app.get("/", (req: Request, res: Response) => {
+app.use("/api/", router);
 
-  res.send('WELCOME TO THE USER AUTHENTICATION SERVER!');
+
+app.get('/', (req: Request, res: Response) => {
+    res.json({ message: "application run successfully!!" });
 });
+
+//Passport Config
+app.use(passport.initialize());
+
+
+
+//Global middleware
+app.use(globalErrorHandler);
+
+//Not Found
+app.use(notFound);
 
 export default app;

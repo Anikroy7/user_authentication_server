@@ -87,7 +87,7 @@ Ensure you have the following installed:
 5. Start the server:
 
     ```bash
-    npm run start
+    npm run start:dev
     ```
 
 

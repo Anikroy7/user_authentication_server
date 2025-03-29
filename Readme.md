@@ -1,6 +1,6 @@
 # Secure REST API for User Authentication and Payments
 
-This project implements a secure REST API for user authentication and payments using **NestJS** (preferred) or **Express.js**, **Passport.js**, **JWT**, and **Stripe** (or another payment gateway). The API includes endpoints for user registration, login, fetching user details, and simulating payments, with proper security measures such as password hashing, role-based authentication, and error handling.
+This project implements a secure REST API for user authentication and payments using **Express.js**, **Passport.js**, **JWT**, and **Aamarpay** . The API includes endpoints for user registration, login, fetching user details, and simulating payments, with proper security measures such as password hashing, role-based authentication, and error handling.
 
 ## Features
 
